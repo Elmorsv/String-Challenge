@@ -9,7 +9,7 @@ const flights =
 for (const flight of flights.split("+")) {
   //   console.log(flight);
   const [type, from, to, time] = flight.split(";");
-  const str = `${type.split("_").join(" ")} ${from
+  const str = `${type.startsWith("_Delayed") ? "🔴" : ""} ${type.split("_").join(" ")} ${from
     .slice(0, 3)
     .toUpperCase()} ${to.slice(0, 3).toUpperCase()} (${time.replace(
     ":",
